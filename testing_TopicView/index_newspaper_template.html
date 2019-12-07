@@ -1,0 +1,428 @@
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles/newspaper.css">
+    <title>Digital Media Outlet Page</title>
+    <meta name="viewport" content="width=device-width">
+<style>
+body{
+    font-family: 'Droid Serif', serif;
+    font-size: 14px;
+    color: #2f2f2f;
+    background-color: #f9f7f1;
+}
+header{
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 65px;
+    width: 62%;            /* I Modified this to fit all text reasonably */
+    text-transform: uppercase;
+    display: inline-block;
+    line-height: 10px;
+    margin-bottom: 0px;
+
+}
+p{
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.head{
+    text-align: center;
+    position: relative;
+
+
+}
+
+.headerobjectswrapper{
+}
+
+.subhead{
+    text-transform: uppercase;
+    border-bottom: 2px solid #2f2f2f;
+    border-top: 2px solid #2f2f2f;
+    padding: 12px 0 12px 0;
+
+}
+.textbox{
+    position: relative;
+    width: 12%;
+    left: 10px;
+    border: 3px double #2f2f2f;
+    padding: 4px 8px 4px 8px;
+    line-height: 10px;
+    display: inline-block;
+    margin: 0 20px 0px -320px;
+}
+.content{
+    font-size: 0;
+    line-height: 0;
+    word-spacing: -.31em;
+    display: inline-block;
+    margin: 30px 2% 0 2%;
+
+
+}
+.collumns{
+
+}
+
+.collumn{
+    font-size: 14px;
+    line-height: 10px;
+    width: 45%;
+    display: inline-block;
+    padding: 0 1% 0 1%;
+    vertical-align: top;
+    margin-bottom: 50px;
+    transition: all .7s;
+}
+
+.collumnlong{
+    font-size: 14px;
+    line-height: 10px;
+    width: 100%;
+    display: inline-block;
+    padding: 0 1% 0 1%;
+    vertical-align: top;
+    margin-bottom: 1px;
+    transition: all .7s;
+}
+
+.collumn + .collumn { 
+  border-left: 1px solid #2f2f2f;
+}
+.collumn .headline{
+    text-align: center;
+    line-height: normal;
+    font-family: 'Playfair Display', serif;
+    display: block;
+    margin: 0 auto;
+
+
+}
+.collumn .headline.hl1{
+    font-weight: 700;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 10px 0 10px 0;
+
+}
+
+.collumn .headline.hl2{
+    font-weight: 400;
+    font-style: italic;
+    font-size: 24px;
+    box-sizing: border-box;
+    padding: 10px 0 10px 0;
+}
+
+.collumn .headline.hl2:before{
+    border-top: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    height: 7px;
+    display: block;
+    margin: 0 auto;
+}
+.collumn .headline.hl2:after{
+    border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    height: 9px;
+    display: block;
+    margin: 0 auto;
+
+}
+
+.collumn .headline.hl3{
+    font-weight: 400;
+    font-style: italic;
+    font-size: 36px;
+    box-sizing: border-box;
+    padding: 10px 0 0px 0;
+}
+.collumn .headline.hl4{
+    font-weight: 700;
+    font-size: 12px;
+    box-sizing: border-box;
+    padding: 10px 0 10px 0;
+}
+.collumn .headline.hl4:before{
+    border-top: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    height: 7px;
+    display: block;
+    margin: 0 auto;
+}
+.collumn .headline.hl4:after{
+    border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    height: 10px;
+    display: block;
+    margin: 0 auto;
+
+}
+
+.collumn .headline.hl5{
+    font-weight: 400;
+    font-size: 42px;
+    text-transform: uppercase;
+    font-style: italic;
+    box-sizing: border-box;
+    padding: 10px 0 10px 0;
+}
+.collumn .headline.hl6{
+    font-weight: 400;
+    font-size: 4px;
+    box-sizing: border-box;
+    padding: 10px 0 10px 0;
+}
+.collumn .headline.hl6:before{
+    border-top: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    height: 4px;
+    display: block;
+    margin: 0 auto;
+}
+.collumn .headline.hl6:after{
+    border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    height: 4px;
+    display: block;
+    margin: 0 auto;
+
+}
+.collumn .headline.hl7{
+    font-weight: 700;
+    font-size: 12px;
+    box-sizing: border-box;
+    display: block;
+    padding: 10px 0 10px 0;
+}
+.collumn .headline.hl8{
+    font-weight: 700;
+    font-size: 12px;
+    box-sizing: border-box;
+    padding: 10px 0 10px 0;
+}
+.collumn .headline.hl9{
+    font-weight: 700;
+    font-size: 12px;
+    box-sizing: border-box;
+    padding: 10px 0 10px 0;
+}
+.collumn .headline.hl10{
+    font-weight: 700;
+    font-size: 12px;
+    box-sizing: border-box;
+    padding: 10px 0 10px 0;
+}
+.collumn .citation{
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    line-height: 44px;
+    /*font-style: italic;*/
+    text-align: center;
+    font-weight: 400;
+    display: block;
+    margin: 40px 0 40px 0;
+    font-feature-settings: "liga", "dlig";
+
+}
+.collumn .citation:before{
+    border-top: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    height: 16px;
+    display: block;
+    margin: 0 auto;
+}
+.collumn .citation:after{
+    border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    height: 16px;
+    display: block;
+    margin: 0 auto;
+}
+.collumn .figure {
+	  margin: 0 0 20px;
+}
+.collumn .figcaption{
+	font-style: italic;
+	font-size: 12px;
+}
+.media {
+    -webkit-filter: sepia(80%) contrast(1) opacity(0.8);
+    filter: sepia(80%) grayscale(1) contrast(1) opacity(0.8);
+    mix-blend-mode: multiply;
+    width: 100%;
+}
+/*________________________________________________________________________________________________________________________________*/
+/*MEDIAQUERIES*/
+@media only all and (max-width: 1300px) {
+    .textbox{
+        display: none;
+    }
+
+}
+@media only all and (max-width: 1200px) {
+    .collumn{
+        width: 31%;
+    }
+
+}
+    @media only all and (max-width: 900px) {
+    .collumn{
+        width: 47%;
+    }
+
+}
+@media only all and (max-width: 600px) {
+    .collumn{
+        width: 100%;
+    }
+	.collumn + .collumn {
+				border-left: none;
+      	border-bottom: 1px solid #2f2f2f;
+	}
+    header{
+        max-width: 320px;
+        font-size: 60px;
+        line-height: 20px;
+        overflow: hidden;
+    }
+
+}
+
+
+</style>
+ <script src="../timelineview/dist/vis.js"></script>
+  <link href="../timelineview/dist/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="head">
+    <div class="headerobjectswrapper">
+        <div class="textbox"><span style="font-style: italic;">Template result page of editor selected output article: number article</span><br><span>Type of things in here: Ads?</span></div>
+        <header>Topic View - Trump </header>
+    </div>
+
+    <div class="subhead">TopicView Page</div>
+</div>
+
+<div class="content">   >
+    <div class="collumns">
+        <div class="collumn">
+           <!-- <div class="head"><span class="headline hl3">After Charlottesville, Black Republican Gives Trump a History Lesson on Racism</span><p><span class="headline hl4">by Yamiche Alcindor and Glenn Thrush</span></p></div>
+           Tim Scott, the lone black Republican in the Senate, delivered a pointed history lesson on Americas 300-year legacy of racism to President Trump on Wednesday in response to what he called Mr. Trumps sterile response to the riots in Charlottesville, Va., last month.The president invited Mr. Scott, a conservative from South Carolina who had expressed disgust with Mr. Trumps equivocal reaction to the white supremacist protests that left one woman dead, to the Oval Office for what Mr. Trumps staff described as a demonstration of the presidents commitment to positive race relations. Both men described the interaction as positive and constructive, but Mr. Scott clearly had a point to make.When a reporter asked the senator after the meeting if the president had expressed regret, a pained look flashed on Mr. Scotts face. He paused for a few seconds and replied, He certainly tried to explain what he was trying to convey.White House officials emailed reporters a photograph of Mr. Trump listening intently as Mr. Scott made a point, with both sitting in chairs often used for bilateral meetings with foreign leaders. The White House misidentified him as Tom Scott.In his remarks to reporters, Mr. Scott made it clear he did not go to the White House for a photo op, but to decisively rebut Mr. Trumps claim  to the presidents face  that both sides, racists and anti-racist protesters, were responsible for the violence that followed a torchlight protest against the removal of a statue of Robert E. Lee.My response was that, while thats true, I mean I think if you look at it from a sterile perspective, there was an antagonist on the other side, Mr. Scott said.However, the real picture has nothing to do with who is on the other side, he said.It has to do with the affirmation of hate groups who over three centuries of this countrys history have made it their mission to create upheaval in minority communities as their reason for existence, he continued. I shared my thoughts of the last three centuries of challenges from white supremacists, white nationalists, KKK, Nazis. So theres no way to find an equilibrium when you have three centuries of history versus the situation that is occurring today.Mr. Trump responded by repeatedly saying, That makes sense, and concluded the meeting by telling the senator, Lets keep talking.Mr. Scotts version of the meeting was at odds with a description given to reporters by Sarah Huckabee Sanders, the White House press secretary, in the White House briefing room. When asked if Mr. Scott had expressed his displeasure at the presidents response to Charlottesville, she said, Not at all, adding that Mr. Scott and Mr. Trump had discussed what we can do to bring people together, not talk about divisions within the country.For weeks, White House officials have been discussing ways to ease the tensions stoked by the demonstrations and exacerbated, in the view of many Republicans, by the presidents off-the-cuff comments in the wake of the unrest. The efforts have coincided with Mr. Trumps attempts to improve his relationships with Democratic leaders.Mr. Scott has been outspoken on issues of racism but supportive of the presidents low-tax economic agenda.</p></div>-->
+       <div class="head"><span class="headline hl3">Most Views Stories</span><p><span class="headline hl4">
+						  <div id="" style="overflow-y: scroll; height:200px;">
+						 <table>
+        <thead>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="https://hindsightsolutions.net"><b>Who Decides Whether Trump Is Unfit? </b></a><br> by Peter D. Kramer and Sally L. Satel (Op-Ed, Aug. 29)The growing discussion about the 25th Amendment, which provides a mechanism for presidential ...</td>
+                <td></td>
+            </tr>
+             <tr>
+        	        <td><a href="https://hindsightsolutions.net"><b>Different Day Different Audience and a Completely Different Trump</b></a><br>  by Richard Cordray Prohibiting people from filing class-action suits against companies is only one barrier that ...</td>
+            </tr>
+             <tr>
+				<td><a href="https://hindsightsolutions.net"><b>How to Get Rich in Trumps Washington</b></a><br>by Arthur C. Brooks claims that the great jazz saxophonist Charlie Parker had the humble discipline to live within the rules of the music itself.Nons ...</td>
+            </tr>
+             <tr>
+				<td><a href="https://hindsightsolutions.net"><b>Business Groups Court White House Even After C.E.O. Defections</b></a><br> by Richard Cordray P The City of Dallas can proceed again in taking down a statue of Gen. Robert E. Lee from a public park,  ...</td>
+            </tr>
+             <tr>
+				<td><a href="https://hindsightsolutions.net"><b>A Very Taxing President</b></a><br> by John Johnson President Trump on Tuesday ordered an end to the Obama-era program that shields young undocumented immigrants from deportation, calling it an amnes ...</td>
+            </tr>
+    
+					</tbody>
+    </table>
+    </div>	
+						</div>
+					</div>    
+        <div class="collumn">
+        <!--    <div class="head"><span class="headline hl5">Timeline View</span><p><span class="headline hl6">Evolution of Your Topic</span></p></div>
+            </p>
+			<figure class="figure">
+								<div id="visualization"></div>
+								
+
+<script type="text/javascript">
+  // DOM element where the Timeline will be attached
+  var container = document.getElementById('visualization');
+
+  // Create a DataSet (allows two way data-binding)
+  var items = new vis.DataSet([
+    {id: 1, content: 'At Rally  Trump Blames Media for Countrys Deepening Divisions...', start: '2017-04-20'},
+    {id: 2, content: 'Gary Cohn Trumps Adviser Said to Have Drafted Resignation Letter...', start: '2017-04-14'},
+    {id: 3, content: 'Trump Resurrects His Claim That Both Sides Share Blame in Charlottesville...', start: '2017-04-18'},
+    {id: 4, content: 'White House Acts to Stem Fallout From Trumps First Charlottesville Remarks...', start: '2017-04-16'},
+    {id: 5, content: 'After Charlottesville, Black Republican...', start: '2017-04-25'}
+  ]);
+
+  // Configuration for the Timeline
+  var options = {};
+
+  // Create a Timeline
+  var timeline = new vis.Timeline(container, items, options);
+</script> -->
+						<div class="head"><span class="headline hl3">Trending Stories</span><p><span class="headline hl4">
+						  <div id="" style="overflow-y: scroll; height:200px;">
+						 <table>
+        <thead>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="https://hindsightsolutions.net"><b>Who Decides Whether Trump Is Unfit? </b></a><br> by Peter D. Kramer and Sally L. Satel (Op-Ed, Aug. 29)The growing discussion about the 25th Amendment, which provides a mechanism for presidential removal and ...</td>
+                <td></td>
+            </tr>
+             <tr>
+                <td><a href="https://hindsightsolutions.net"><b>Different Day Different Audience and a Completely Different Trump</b></a><br>  by Richard Cordray Prohibiting people from filing class-action suits against companies is only one barrier that should be outlaw ...</td>
+            </tr>
+             <tr>
+				<td><a href="https://hindsightsolutions.net"><b>How to Get Rich in Trumps Washington</b></a><br>by Arthur C. Brooks claims that the great jazz saxophonist Charlie Parker had the humble discipline to live within the rules of the music itself.Nonsense. Musi ...</td>
+            </tr>
+             <tr>
+				<td><a href="https://hindsightsolutions.net"><b>Business Groups Court White House Even After C.E.O. Defections</b></a><br> by Richard Cordray P The City of Dallas can proceed again in taking down a statue of Gen. Robert E. Lee from a public park, a day afte ...</td>
+            </tr>
+             <tr>
+				<td><a href="https://hindsightsolutions.net"><b>A Very Taxing President</b></a><br> by John Johnson President Trump on Tuesday ordered an end to the Obama-era program that shields young undocumented immigrants from deportation, calling it an amnesty-first a ...</td>
+            </tr>
+    
+					</tbody>
+    </table>
+    </div>	
+						</div>
+					</div>	          
+             <div class="collumnlong"><div class="head"><span class="headline hl3"> 
+
+								<div id="visualization"></div>
+
+<script type="text/javascript">
+  // DOM element where the Timeline will be attached
+  var container = document.getElementById('visualization');
+
+  // Create a DataSet (allows two way data-binding)
+
+
+  // Configuration for the Timeline
+  var options = {};
+
+  // Create a Timeline
+  var timeline = new vis.Timeline(container, items, options);
+</script>
+</div>
+<div style="overflow: auto ; height:500px;">
+<iframe src="../horizontal-timeline/index.html" width="90%" height="80%" style="border:2px solid grey;"></iframe>
+</div>
+</body>
+</html>
+
+     

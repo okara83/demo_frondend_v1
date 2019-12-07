@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+ <meta charset="UTF-8">
+ 
+     <link rel="shortcut icon" href="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+   
+  <title>Timeline</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+   <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+ <!--  <link href="css/jumbotron-narrow.css" rel="stylesheet"> -->
+  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/Users/macuser/Desktop/hindsight_demo_copy/app_beta_hs_v1/css/style.css"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script>
+function postArticle(art_id) { 
+var url = "articlefullbody_connect.php";
+$.ajax( { type : 'POST',
+   url : url,
+   dataType : 'json',
+   data : { 'f' : art_id },
+   success: function (data) {
+        localStorage.setItem('test', JSON.stringify(data))
+		window.open("http://127.0.0.1:8080/article-view.html")
+            },
+   error: function (textStatus, errorThrown) {
+            console.log(errorThrown)
+            }
+            
+   });
+}
+</script>
+<style type="text/css">
+.xlink {cursor:pointer;cursor:hand}
+</style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/reset_TL.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="css/style_TL.css"> <!-- Resource style -->
+    <script src="js/modernizr_TL.js"></script> <!-- Modernizr -->
+
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/jquery.mobile.custom.min.js"></script>
+    <script src="js/jtline_TL.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            // dataRoot : '/'
+            var myMappedObject = [
+                  {
+                      "isSelected": "true",
+                      "taskTitle": "White Nationalists March on University of Virginia",
+                      "taskSubTitle": "August 11th, 2017",
+                      "assignDate": "08/11/2017",
+                      "taskShortDate": "11, Aug 2017",
+                      "taskDetails": "CHARLOTTESVILLE, Va.  A month after a Ku Klux Klan rally here ended with the police using tear gas on protesters , Charlottesville is bracing for a weekend of white nationalist demonstrations and counterprotests, and suddenly this tranquil college town feels like a city under siege.Thousands of people  many from out of town  are expected to descend on the city to either protest or participate in a Unite the Right rally on Saturday convened by white nationalists who oppose a plan to remove a statue of Robert E. Lee , the Confederate general, from a city park.People are angry, theyre scared, theyre hurt, theyre confused, said the Rev. Seth Wispelwey of the local United Church of Christ. White supremacists rallying in our town is an act of violence... " 
+                + "<a onclick=" + "\"" + "postArticle(1643)" + "\" " + "class="+ "\"" + "xlink" + "\"" + ">"+"<font color='#335577' face="+ "\""+ "Garamond"   +"\""   + "><u> Read More</u></font></a>"
+                  },
+                  {
+                      "isSelected": "",
+                      "taskTitle": "Man Charged After White Nationalist Rally in Charlottesville Ends in Deadly Violence",
+                      "taskSubTitle": "August 12th, 2017",
+                      "assignDate": "08/12/2017/1",
+                      "taskShortDate": "12, Aug 2017",
+                      "taskDetails": "CHARLOTTESVILLE, Va.  The city of Charlottesville was engulfed by violence on Saturday as white nationalists and counterprotesters clashed in one of the bloodiest fights to date over the removal of Confederate monuments across the South.White nationalists had long planned a demonstration over the citys decision to remove a statue of Robert E. Lee. But the rally quickly exploded into racial taunting, shoving and outright brawling, prompting the governor to declare a state of emergency and the National Guard to join the police in clearing the area.Those skirmishes mostly resulted in cuts and bruises. But after the rally at a city park was dispersed, a car bearing Ohio license plates plowed into a crowd near the citys downtown mall, killing a 32-year-old woman... "
+                 +         "<a onclick=" + "\"" + "postArticle(1697)" + "\" " + "class="+ "\"" + "xlink" + "\"" + ">"+"<font color='#335577' face="+ "\""+ "Garamond"   +"\""   + "><u>Read More</u></font></a>"
+                  },
+                  {
+                      "isSelected": "",
+                      "taskTitle": "Trump’s Remarks on Charlottesville Violence Are Criticized as Insufficient",
+                      "taskSubTitle": "August 12th, 2017",
+                      "assignDate": "08/12/2017/2",
+                      "taskShortDate": "12, Aug 2017",
+                      "taskDetails": "BRIDGEWATER, N.J.  President Trump is rarely reluctant to express his opinion, but he is often seized by caution when addressing the violence and vitriol of white nationalists, neo-Nazis and alt-right activists, some of whom are his supporters.After days of genially bombastic interactions with the news media on North Korea and the shortcomings of congressional Republicans, Mr. Trump on Saturday condemned the bloody protests in Charlottesville, Va., in what critics in both parties saw as muted, equivocal terms.During a brief and uncomfortable address to reporters at his golf resort in Bedminster, N.J., he called for an end to the violence... "
+                 +         "<a onclick=" + "\"" + "postArticle(1733)" + "\" " + "class="+ "\"" + "xlink" + "\"" + ">"+"<font color='#335577' face="+ "\""+ "Garamond"   +"\""   + "><u>Read More</u></font></a>"
+                  },
+                  {
+                      "isSelected": "",
+                      "taskTitle": "White House Acts to Stem Fallout From Trump’s First Charlottesville Remarks",
+                      "taskSubTitle": "August 13th, 2017",
+                      "assignDate": "08/13/2017",
+                      "taskShortDate": "13, Aug 2017",
+                      "taskDetails": "BRIDGEWATER, N.J.  White House officials, under siege over President Trumps reluctance to condemn white supremacists for the weekends bloody rallies in Charlottesville, Va. , tried to clarify his comments on Sunday, as critics in both parties intensified demands that he adopt a stronger, more unifying message.A statement on Sunday  issued more than 36 hours after the protests began  condemned white supremacists for the violence that led to one death... "
+                 +         "<a onclick=" + "\"" + "postArticle(1790)" + "\" " + "class="+ "\"" + "xlink" + "\"" + ">"+"<font color='#335577' face="+ "\""+ "Garamond"   +"\""   + "><u>Read More</u></font></a>"
+                  },
+                  {
+                      "isSelected": "",
+                      "taskTitle": "Death of 2 State Troopers Adds Another Layer of Tragedy in Charlottesville",
+                      "taskSubTitle": "August 14th, 2017",
+                      "assignDate": "08/14/2017/1",
+                      "taskShortDate": "14, Aug 2017",
+                      "taskDetails": "Lt. H. Jay Cullen was a veteran Virginia State Police trooper who had nearly 20 years of experience flying helicopters and airplanes for the departments aviation unit. Trooper Berke M. M. Bates paid his way through aviation school last year in hopes of fulfilling his lifelong dream of flying for the State Police.On Saturday, Lieutenant Cullen and Trooper Bates were in a Bell 407 helicopter circling Charlottesville, Va., keeping watch on the violent demonstrations at a rally of white nationalists... "
+                 +         "<a onclick=" + "\"" + "postArticle(1884)" + "\" " + "class="+ "\"" + "xlink" + "\"" + ">"+"<font color='#335577' face="+ "\""+ "Garamond"   +"\""   + "><u>Read More</u></font></a>"
+                  },
+                  {
+                      "isSelected": "",
+                      "taskTitle": "New Outcry as Trump Rebukes Charlottesville Racists 2 Days Later",
+                      "taskSubTitle": "August 14th, 2017",
+                      "assignDate": "08/14/2017/2",
+                      "taskShortDate": "14, Aug 2017",
+                      "taskDetails": "WASHINGTON  The crisis in Charlottesville, Va., presented President Trump with a choice between adopting the unifying tone of a traditional president or doubling down on the go-it-alone approach that got him elected in 2016.On Monday, Mr. Trump offered a glimpse of a more calming and conventional president, but he ended the day with a flurry of angry tweets that left little doubt he intended to govern on his own terms... "
+                +         "<a onclick=" + "\"" + "postArticle(1891)" + "\" " + "class="+ "\"" + "xlink" + "\"" + ">"+"<font color='#335577' face="+ "\""+ "Garamond"   +"\""   + "><u>Read More</u></font></a>"
+                  },
+                  {
+                      "isSelected": "",
+                      "taskTitle": "Suspect in Charlottesville Car Attack Is Denied Bail in Court Appearance",
+                      "taskSubTitle": "August 14th, 2017",
+                      "assignDate": "08/14/2017/3",
+                      "taskShortDate": "14, Aug 2017",
+                      "taskDetails": "CHARLOTTESVILLE, Va.  The man suspected of ramming his car into a crowd here, an attack that the authorities said left one person dead and 19 more injured, was denied bail during his first court appearance in a downtown courtroom on Monday.You are charged with a number of felonies, including murder and malicious wounding, Judge Robert Downer told the man, James Alex Fields Jr., who was not in the courtroom but was seen on a small video screen sitting with his shoulders slumped in front of a dark cinder block wall and a filing cabinet.A statement by city officials said Mr. Fields, 20, was the driver of the Dodge Challenger that on Saturday drove into a group of counterprotesters, after a planned rally of white nationalists in a city park spun out of control, resulting in melees in the streets... "
+                +         "<a onclick=" + "\"" + "postArticle(1902)" + "\" " + "class="+ "\"" + "xlink" + "\"" + ">"+"<font color='#335577' face="+ "\""+ "Garamond"   +"\""   + "><u>Read More</u></font></a>"
+                  },
+                  {
+                      "isSelected": "",
+                      "taskTitle": "Protester Arrested in Toppling of Confederate Statue in Durham",
+                      "taskSubTitle": "August 15th, 2017",
+                      "assignDate": "08/15/2017",
+                      "taskShortDate": "15, Aug 2017",
+                      "taskDetails": "DURHAM, N.C.  Sheriffs deputies in this predominantly liberal city on Tuesday began arresting protesters they said tore down a statue honoring pro-slavery secessionists, while the states Democratic governor pledged to repeal a state law that had prevented such monuments from being removed through legal means.Protesters had gathered in Durham on Monday evening to support victims of the weekends deadly white nationalist rally in Charlottesville, Va., which had been called in opposition to the removal of a statue of the Confederate general Robert E. Lee... "
+                +         "<a onclick=" + "\"" + "postArticle(2111)" + "\" " + "class="+ "\"" + "xlink" + "\"" + ">"+"<font color='#335577' face="+ "\""+ "Garamond"   +"\""   + "><u>Read More</u></font></a>"    
+                  },
+                 {
+                      "isSelected": "",
+                      "taskTitle": "Defiant, Trump Laments Assault on Culture and Revives a Bogus Pershing Story",
+                      "taskSubTitle": "August 17th, 2017",
+                      "assignDate": "08/17/2017",
+                      "taskShortDate": "17, Aug 2017",
+                      "taskDetails": "WASHINGTON  Despite ongoing rebukes over his defense of white supremacists, President Trump defiantly returned to his campaigns nativist themes on Thursday. He lamented an assault on American culture, revived a bogus, century-old story about killing Muslim extremists and attacked Republicans with a renewed vigor... "
+                +         "<a onclick=" + "\"" + "postArticle(2340)" + "\" " + "class="+ "\"" + "xlink" + "\"" + ">"+"<font color='#335577' face="+ "\""+ "Garamond"   +"\""   + "><u>Read More</u></font></a>"
+                  },
+                  {
+                      "isSelected": "",
+                      "taskTitle": "At Rally, Trump Blames Media for Country’s Deepening Divisions",
+                      "taskSubTitle": "August 22nd, 2017",
+                      "assignDate": "08/22/2017",
+                      "taskShortDate": "22 Aug, 2017",
+                      "taskDetails": "PHOENIX  President Trump, stung by days of criticism that he sowed racial division in the United States after deadly clashes in Charlottesville, Va. , accused the news media on Tuesday of misrepresenting what he insisted was his prompt, unequivocal condemnation of bigotry and hatred.After declaring, What happened in Charlottesville strikes at the core of America, Mr. Trump delivered a lengthy, aggrieved defense of his statements after the Aug. 12 violence that left one woman dead and the nation reeling at the images of swastikas in Thomas Jeffersons hometown... "
+                +         "<a onclick=" + "\"" + "postArticle(3062)" + "\" " + "class="+ "\"" + "xlink" + "\"" + ">"+"<font color='#335577' face="+ "\""+ "Garamond"   +"\""   + "><u>Read More</u></font></a>"
+                  }
+            ];
+
+            var jtLine = $('.myjtline').jTLine({
+                callType: 'jsonObject',
+                structureObj: myMappedObject,
+                map: {
+                    "dataRoot": "/",
+                    "title": "taskTitle",
+                    "subTitle": "taskSubTitle",
+                    "dateValue": "assignDate",
+                    "pointCnt": "taskShortDate",
+                    "bodyCnt": "taskDetails"
+                },
+                distanceMode: 'fixDistance', // 'fixDistance' 'auto' 'predefinedDistance'
+                eventsMinDistance: 64.5,       // Consider It as Distance Unit "by Pixel"
+                fixDistanceValue: 2,         // if eventsMinDistance = 60 & fixDistanceValue= 2 then the value is: (60*2) = 120 px
+                firstPointMargin: 1          // First Point Margin from the left
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="myjtline">
+    </div>
+</body>
+</html>
+ 

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+   
+  <title>Launch Page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+   <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+ <!--  <link href="css/jumbotron-narrow.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="/Users/macuser/Desktop/hindsight_demo/app_beta_hs_v1/hs_app/css/dropdown.css">
+  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/Users/macuser/Desktop/hindsight_demo_copy/app_beta_hs_v1/css/style.css"/>
+  <link rel="stylesheet" type="text/css" href="example/css/projects.min.css">
+<link rel="stylesheet" type="text/css" href="example/css/taggle.css">
+
+<!-- CSS -->
+<style>
+
+input#inputfile{
+cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
+margin:2px;
+padding:2px 1px; /*add some padding to the inside of the button*/
+background:#0099cc; /*the colour of the button*/
+border:1px solid #0099cc; /*required or the default border for the browser will appear*/
+/*give the button curved corners, alter the size as required*/
+-moz-border-radius: 15px;
+-webkit-border-radius: 15px;
+border-radius: 15px;
+/*give the button a drop shadow*/
+-webkit-box-shadow: 0 0 4px rgba(0,0,0, .75);
+-moz-box-shadow: 0 0 4px rgba(0,0,0, .75);
+box-shadow: 0 0 4px rgba(0,0,0, .75);
+/*style the text*/
+color:#f3f3f3;
+text-align  :center;
+font-size:1.0em;
+font-family: garamond;
+}
+/***NOW STYLE THE BUTTON'S HOVER AND FOCUS STATES***/
+input#inputfile:hover, input#inputfile:focus{
+background-color :#0099cc; /*make the background a little darker*/
+/*reduce the drop shadow size to give a pushed button effect*/
+-webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
+-moz-box-shadow: 0 0 1px rgba(0,0,0, .75);
+box-shadow: 0 0 1px rgba(0,0,0, .75);
+}
+
+
+input#gobutton{
+cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
+margin:2px;
+padding:2px 1px; /*add some padding to the inside of the button*/
+background:#0099cc; /*the colour of the button*/
+border:1px solid #0099cc; /*required or the default border for the browser will appear*/
+/*give the button curved corners, alter the size as required*/
+-moz-border-radius: 15px;
+-webkit-border-radius: 15px;
+border-radius: 15px;
+/*give the button a drop shadow*/
+-webkit-box-shadow: 0 0 4px rgba(0,0,0, .75);
+-moz-box-shadow: 0 0 4px rgba(0,0,0, .75);
+box-shadow: 0 0 4px rgba(0,0,0, .75);
+/*style the text*/
+color:#f3f3f3;
+text-align  :center;
+font-size:1.0em;
+font-family: garamond;
+}
+/***NOW STYLE THE BUTTON'S HOVER AND FOCUS STATES***/
+input#gobutton:hover, input#gobutton:focus{
+background-color :#0099cc; /*make the background a little darker*/
+/*reduce the drop shadow size to give a pushed button effect*/
+-webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
+-moz-box-shadow: 0 0 1px rgba(0,0,0, .75);
+box-shadow: 0 0 1px rgba(0,0,0, .75);
+}
+
+
+/* Box styles */
+.myBox {
+border: none;
+padding: 1px;
+font: 4px garamond;
+width: 170px;
+height: 10px;
+
+}
+
+
+
+
+form{
+        margin: 4px 0;
+    }
+form input, button{
+        padding: 5px;
+    }
+table{
+        width: 100%;
+        height: 100%;
+        margin-bottom: 0px;
+		border-collapse: collapse;
+    }
+table, th, td{
+        border: 1px solid #0099cc;
+    }
+table th, table td{
+padding: 4px;
+        text-align: left;
+}
+
+/* On/Off toggle Button */
+.switch {
+	position: absolute;
+	display: block;
+	vertical-align: top;
+	width: 100px;
+	height: 30px;
+	padding: 3px;
+	margin: 0 10px 10px 0;
+	background: linear-gradient(to bottom, #eeeeee, #FFFFFF 25px);
+	background-image: -webkit-linear-gradient(top, #eeeeee, #FFFFFF 25px);
+	border-radius: 18px;
+	box-shadow: inset 0 -1px white, inset 0 1px 1px rgba(0, 0, 0, 0.05);
+	cursor: pointer;
+	box-sizing:content-box;
+}
+.switch-input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	box-sizing:content-box;
+}
+.switch-label {
+	position: relative;
+	display: block;
+	height: inherit;
+	font-size: 10px;
+	text-transform: uppercase;
+	background: #eceeef;
+	border-radius: inherit;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15);
+	box-sizing:content-box;
+}
+.switch-label:before, .switch-label:after {
+	position: absolute;
+	top: 50%;
+	margin-top: -.5em;
+	line-height: 1;
+	-webkit-transition: inherit;
+	-moz-transition: inherit;
+	-o-transition: inherit;
+	transition: inherit;
+	box-sizing:content-box;
+}
+.switch-label:before {
+	content: attr(data-off);
+	right: 11px;
+	color: #aaaaaa;
+	text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+}
+.switch-label:after {
+	content: attr(data-on);
+	left: 11px;
+	color: #FFFFFF;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+	opacity: 0;
+}
+.switch-input:checked ~ .switch-label {
+	background: #E1B42B;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);
+}
+.switch-input:checked ~ .switch-label:before {
+	opacity: 0;
+}
+.switch-input:checked ~ .switch-label:after {
+	opacity: 1;
+}
+.switch-handle {
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	width: 28px;
+	height: 28px;
+	background: linear-gradient(to bottom, #FFFFFF 40%, #f0f0f0);
+	background-image: -webkit-linear-gradient(top, #FFFFFF 40%, #f0f0f0);
+	border-radius: 100%;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+.switch-handle:before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -6px 0 0 -6px;
+	width: 12px;
+	height: 12px;
+	background: linear-gradient(to bottom, #eeeeee, #FFFFFF);
+	background-image: -webkit-linear-gradient(top, #eeeeee, #FFFFFF);
+	border-radius: 6px;
+	box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
+}
+.switch-input:checked ~ .switch-handle {
+	left: 74px;
+	box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+ 
+.switch-flat {
+	padding: 0;
+	background: #FFF;
+	background-image: none;
+}
+.switch-flat .switch-label {
+	background: #FFF;
+	border: solid 2px #eceeef;
+	box-shadow: none;
+}
+.switch-flat .switch-label:after {
+	color: #0099cc;
+}
+.switch-flat .switch-handle {
+	top: 6px;
+	left: 6px;
+	background: #dadada;
+	width: 22px;
+	height: 22px;
+	box-shadow: none;
+}
+.switch-flat .switch-handle:before {
+	background: #eceeef;
+}
+.switch-flat .switch-input:checked ~ .switch-label {
+	background: #FFF;
+	border-color: #0099cc;
+}
+.switch-flat .switch-input:checked ~ .switch-handle {
+	left: 72px;
+	background: #0099cc;
+	box-shadow: none;
+} 
+ 
+/* Transition
+========================== */
+.switch-label, .switch-handle {
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+	-moz-transition: All 0.3s ease;
+	-o-transition: All 0.3s ease;
+}
+/*end ON/OFF Toggle button*/
+
+.fixed-nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 50px;
+  background-color: #00a087;
+}
+#menu {
+    width: 700px;
+    height: 25px;
+    font-size: 12px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-weight: bold;
+    text-align: left;
+    text-shadow: 0px 0px 0px #333333;
+    background-color: #0099cc;
+        border-radius: 8px;
+}
+
+#menu ul {
+    height: auto;
+    padding: 2px 0px;
+    margin: 0px;
+}
+
+#menu li { 
+display: inline; 
+padding: 2px; 
+}
+
+#menu a {
+    text-decoration: none;
+    color: #FFFFFF;
+    padding: 4px 4px 4px 4px;
+}
+
+#menu a:hover {
+    color: #0099cc;
+    background-color: #FFF;
+}
+
+
+
+/* ========================================================================== 
+	Select Menu Widget
+=========================================================================== */
+.si-select-menu-wrapper {
+	display:inline-block;
+	border: 1px solid #0099cc;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	background-position:right;
+	background-repeat:no-repeat;
+	position:relative;
+	overflow:hidden;
+	-webkit-box-shadow: 1px 1px 3px rgba(50, 50, 50, 0.50);
+	-moz-box-shadow:    1px 1px 3px rgba(50, 50, 50, 0.50);
+	box-shadow:         1px 1px 3px rgba(50, 50, 50, 0.50);
+	text-align:left;
+	vertical-align:middle;
+	margin-bottom:.25em;
+
+}
+.si-select-menu-wrapper:hover {
+	border:1px solid #0099cc;
+}
+.si-select-menu-wrapper:focus {
+	border:1px solid black;
+}
+.si-select-menu-wrapper select {
+	height:1.83em; /*js handled */
+	position:relative;
+	z-index:0;
+	opacity:0;
+	filter: alpha(opacity=0); /* IE5-7 */
+	margin:0 !important;
+	padding:0 !important;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE8 */
+}
+.si-select-menu-wrapper .si-select-text {
+	text-shadow:none;
+	position:absolute;
+	top:0;
+	left:0;
+	display:block;
+	height:1.13em !important;
+	width:96%;
+	background-color:#0099cc;
+	overflow:hidden;
+	z-index:0;
+	line-height:1.5em;
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	text-align:left;
+	color:#0099cc;
+	font-weight:normal;
+}
+.si-select-menu-wrapper .si-select-dropdown {
+  @include color-a;  
+  position:absolute;
+	height:100%;
+	width:10px;
+	top:0;
+	right:0;
+	z-index:0;
+	padding-left:5px;
+	border-radius: 0px 5px 5px 0px;
+	-moz-border-radius: 0px 5px 5px 0px;
+	-webkit-border-radius: 0px 5px 5px 0px;
+
+}
+.si-select-menu-wrapper:hover .si-select-dropdown {
+  @include color-a-inv; 
+}
+.si-select-menu-wrapper .si-select-dropdown .ui-icon {
+	margin-top:.3em !important;
+	margin-left:-.3em !important;
+}
+
+.divider{
+    width:1px;
+    height:auto;
+    display:inline-block;
+}
+
+input {
+  outline: none;
+  padding: 1px;
+  border-radius: 1px;
+  border: 1px solid black;
+}
+::-webkit-input-placeholder { /* Chrome */
+  color: black;
+  transition: opacity 250ms ease-in-out;
+}
+:focus::-webkit-input-placeholder {
+  opacity: 0.5;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: black;
+  transition: opacity 250ms ease-in-out;
+}
+:focus:-ms-input-placeholder {
+  opacity: 0.5;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: black;
+  opacity: 1;
+  transition: opacity 250ms ease-in-out;
+}
+:focus::-moz-placeholder {
+  opacity: 0.5;
+}
+:-moz-placeholder { /* Firefox 4 - 18 */
+  color: black;
+  opacity: 1;
+  transition: opacity 250ms ease-in-out;
+}
+:focus:-moz-placeholder {
+  opacity: 0.5;
+}
+
+#locator { position: absolute; visibility: visible; left: 910px; top: 6px; height: 50px; width: 290px; z-index: 200; }
+#docator { position: absolute; left: 520px; top: 75px; height: 60px; width: 590px; z-index: 200; }
+#focator { position: absolute; left: 220px; top: 75px; height: 60px; width: 590px; z-index: 200; }
+#mocator { position: absolute; left: 166px; top: 1px; height: 60px; width: 690px; z-index: 200; }
+
+
+.nav-tabs {
+    margin-bottom: 1px;
+}
+.sign-with {
+    margin-top: 1px;
+    padding: 1px;
+}
+
+</style>
+<style type="text/css">
+.xlink {cursor:pointer;cursor:hand}
+</style>
+<link type="text/css" rel="stylesheet" href="/Users/macuser/Desktop/hindsight_demo_copy/app_beta_hs_v1/css/style.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    
+
+
+ <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    
+<script>
+function select_all() {
+	$('input[class=case]:checkbox').each(function(){ 
+		if($('input[class=check_all]:checkbox:checked').length == 0){ 
+			$(this).prop("checked", false); 
+		} else {
+			$(this).prop("checked", true); 
+		} 
+	});
+}
+var $table = $('table');
+$table.floatThead({
+    scrollContainer: function($table){
+        return $table.closest('.wrapper');
+    }
+});
+</script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+function openArticleRelatedContent() { 
+var str = '6495';
+ console.log(typeof str);
+var url = "starter.php";
+$.ajax( { type : 'POST',
+   url : url,
+   dataType : 'json',
+   data : { 'q' : str},
+   success: function (data) {
+        localStorage.setItem('tester', JSON.stringify(data))
+		window.open("http://127.0.0.1:8080/index.html")
+            },
+   error: function (textStatus, errorThrown) {
+            console.log(errorThrown)
+            },      
+   });
+};
+</script>
+<title>Hindsight Magazine</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" type="text/css" href="article-viewstyle.css" media="screen" />
+</head>
+<body id="top">
+<div id="network">
+  <div class="center-wrapper">
+  <!-- <div class="left" id="date"><script type="text/javascript">var d = new Date(); dn = d.toString(); document.getElementById("date").innerHTML = dn.slice(3,15)</script></div> -->
+    <div class="right">
+      <ul class="tabbed" id="network-tabs">
+        <li class="current-tab"><a href="#">Hindsight Magazine</a></li>
+      </ul>
+      <div class="clearer">&nbsp;</div>
+    </div>
+    <div class="clearer">&nbsp;</div>
+  </div>
+</div>
+<div id="site">
+  <div class="center-wrapper">
+    <div id="header">
+      <div class="right" id="toolbar"> Text size <a href="#"><img src="img/icon-plus.gif" width="20" height="20" alt="" /></a> <a href="#"><img src="img/icon-minus.gif" width="20" height="20" alt="" /></a> </div>
+      <div class="clearer">&nbsp;</div>
+      <div id="site-title">
+        <h1><a href="#">Hindsight Magazine</a></h1>
+      </div>
+    <div class="main">
+      <div class="post">
+        <div class="post-title">
+        <br>  
+          <h2>Trump Resurrects His Claim That Both Sides Share Blame in Charlottesville Violence</h2>
+        </div>
+        <div class="post-date">
+      </script>&nbsp;&nbsp;by:&nbsp;Mark Landler</div>
+        <div class="post-body">
+          <p><a href="#"></a></p>
+          <p class="large">WASHINGTON  President Trump thrust himself back into the racial storms of Charlottesville on Thursday repeating his charge that those who resisted the neo-Nazis and white supremacists were as much to blame as the alt-right crowds who marched on the Virginia college town.Mr. Trump was characterizing his side of a conversation on Wednesday with Senator Tim Scott of South Carolina during which Mr. Scott the Senates only black Republican confronted the president on his claim that both sides were responsible for the violence that followed a torchlight protest against the removal of a statue of Robert E. Lee.Especially in light of the advent of Antifa if you look at whats going on there you know you have some pretty bad dudes on the other side also Mr. Trump said referring to the anti-fascist activists who clashed with the neo-Nazis and white supremacists.Now because of whats happened since then with Antifa you look at really whats happened since Charlottesville  a lot of people are saying  in fact a lot of people have actually written Gee Trump might have a point Mr. Trump said to reporters on Air Force One. I said Youve got some very bad people on the other side which is true.It was the latest shift in Mr. Trumps constantly evolving statements about Charlottesville. He has alternately condemned the hate groups and drawn a moral equivalence between them and the counterprotesters. On Thursday night he signed a nonbinding congressional resolution urging him to condemn groups like white supremacists and the Ku Klux Klan. But earlier in the day Mr. Trump reverted to the unapologetic stance he took in a news conference last month at Trump Tower.Despite that Mr. Trump said that he and Mr. Scott had a great conversation. He described Mr. Scott as a longstanding friend whom he supported early in his career.In his remarks to reporters after the meeting Mr. Scott made it clear he had gone to the White House to rebut Mr. Trumps claim that both sides were responsible. But he also said that he did not expect to change Mr. Trumps mind  and that he had not.He is who he has been and I didnt go in there to change who he was Mr. Scott said on Thursday. I wanted to inform and educate a different perspective. I think we accomplished that. To assume that immediately thereafter hes going to have an epiphany is just unrealistic.Mr. Trumps latest comments were a reminder that for all the talk of a newly disciplined White House under the management of the chief of staff John F. Kelly the president remains an unpredictable character with no intention of stifling his opinions.In a 15-minute lightning round of questions and answers on Air Force One during a trip to Florida Mr. Trump spoke about hurricanes and climate change tax reform Irans alleged violations of the nuclear deal and his confidence in two top aides Gary D. Cohn and Steven Mnuchin.Mr. Cohns status as the presidents chief economic adviser has been in question since he criticized Mr. Trumps reaction to the violence in Charlottesville. Mr. Mnuchin the Treasury secretary recently came under scrutiny for having his agency look into the use of a military aircraft for his honeymoon .Mr. Trump said he had not heard about Mr. Mnuchins request but added I doubt he would do it. Ive known him a long time; he is a very straight shooter. So it could be that he used a plane and is paying for it.As for Mr. Cohn he said I have confidence in Gary too. Later Mr. Trump noted that he also liked and respected Janet L. Yellen the chairwoman of the Federal Reserve  a job that Mr. Cohn has openly coveted.The president did not soften his position toward President Barack Obamas national security adviser Susan E. Rice who has become a sensitive figure in the multiple investigations of Mr. Trumps ties to Russia because of reports that she asked to have officials in the Trump campaign unmasked during intelligence briefings.Shes not supposed to be doing that and what she did is wrong Mr. Trump said. Thats just the tip of the iceberg.Ms. Rices explanation of why she asked for the identities of the Trump officials to be disclosed came during testimony before the House Intelligence Committee. She said the Obama administration was trying to determine why the crown prince of the United Arab Emirates Mohammed bin Zayed visited New York without telling the White House.That seemed to satisfy even Republican lawmakers. I didnt hear anything to believe that she did anything illegal Representative Tom Rooney Republican of Florida told CNN.But that did not satisfy the president. What she did was wrong Mr. Trump said. Not supposed to be doing that. You know it.Then he challenged the reporters on Air Force One to lob more questions at him. Lets go folks he said.' 'Trump Resurrects His Claim That Both Sides Share Blame in Charlottesville Violence.
+</p>
+      </div>
+      <div class="clearer">&nbsp;</div>
+    </div>
+    <div id="footer">
+      <div class="left">&copy; 2017 Hindsight Magazine</div>
+     <form><br>
+    	<input id="gobutton" name="gobutton5" type="gobutton" value="Related Content" onclick="openArticleRelatedContent()" style="float: right;"/>
+    	</form>
+      <div class="clearer">&nbsp;</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
